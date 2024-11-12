@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопросы Викторины</title>
+    <style>
+        body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #FF7E5F, #feb47b);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.question-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  max-width: 600px;
+}
+
+.question-header h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.options {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding-left: 5px;
+  color: #fff;
+}
+
+.option-label input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #FF7E5F;
+  color: #ffffff;
+  border: 2px solid #FF7E5F;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #ffffff;
+  color: #FF7E5F;
+  border: 2px solid #ffffff;
+}
+
+    </style>
+</head>
+<body>
+    <div class="question-container">
+        <div class="question-header">
+            <h2>Вопрос {{test}}</h2>
+        </div>
+        <form class="options" action="/{{rezult}}" method="post">
+            <label class="option-label" for="otvet_1">
+                <input type="radio" name="otvet" value="{{otvet_1}}" id="otvet_1">
+                {{one}}
+            </label>
+            <label class="option-label" for="otvet_2">
+                <input type="radio" name="otvet" value="{{otvet_2}}" id="otvet_2">
+                {{two}}
+            </label>
+            <label class="option-label" for="otvet_3">
+                <input type="radio" name="otvet" value="{{otvet_3}}" id="otvet_3">
+                {{three}}
+            </label>
+            <a href="{{url}}" class="submit-button-link">
+                <button type="submit" class="submit-button">Подтвердить выбор</button>
+            </a>
+        </form>
+    </div>
+</body>
+</html>

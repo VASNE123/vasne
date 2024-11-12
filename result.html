@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты Викторины</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #FF7E5F, #feb47b);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .result-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .result-header h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .result-content {
+            font-size: 1.2em;
+        }
+
+        .result-item {
+            margin-bottom: 15px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #ffffff;
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #ffffff;
+            color: #FF7E5F;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <div class="result-header">
+            <h1>Ваш результат</h1>
+        </div>
+        <div class="result-content">
+            <div class="result-item"><strong>ФИО:</strong> {{fio}}</div>
+            <div class="result-item"><strong>Курс:</strong> Курс {{kurs}}</div>
+            <div class="result-item"><strong>Баллы:</strong> {{ball}} из 5</div>
+        </div>
+        <a href="/" class="back-link">Вернуться на главную</a>
+    </div>
+</body>
+</html>

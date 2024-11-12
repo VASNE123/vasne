@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #FF7E5F, #feb47b);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .main-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .main-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .main-header p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .start-quiz-link {
+            text-decoration: none;
+        }
+
+        .start-quiz {
+            background-color: #ffffff;
+            color: #FF7E5F;
+            border: 2px solid #ffffff;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        .start-quiz::before {
+            content: '';
+            background-color: #ffffff;
+            width: 300%;
+            height: 300%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transition: all 0.75s ease-in-out;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .start-quiz:hover {
+            color: #feb47b;
+        }
+
+        .start-quiz:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .fio-field {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .fio-label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .fio-input {
+            padding: 10px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 200px;
+        }
+
+        .course-selection {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .course-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .course-option input[type="radio"] {
+            display: none;
+        }
+
+        .course-option span {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            background: #ffffff;
+            margin-right: 10px;
+            transition: background 0.3s ease;
+            border: 2px solid #ffffff;
+        }
+
+        .course-option input[type="radio"]:checked + span {
+            background-color: #FF7E5F;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="main-header">
+            <h1>Добро пожаловать на MathZnak!</h1>
+            <p>Проверьте свои знания и получите море удовольствия.</p>
+        </header>
+        <form action="/index/1" method="post">
+        <main>
+
+            <div class="fio-field">
+                <label class="fio-label" for="fio">Введите ваше ФИО:</label>
+                <input class="fio-input" type="text" id="fio" name="fio" placeholder="Ваше ФИО">
+            </div>
+
+            <!-- Улучшенный визуальный выбор курса -->
+            <div class="course-selection">
+                <label class="course-option">
+                    <input type="radio" name="course" value="1" required>
+                    <span></span> Курс 1
+                </label>
+                <label class="course-option">
+                    <input type="radio" name="course" value="2">
+                    <span></span> Курс 2
+                </label>
+            </div>
+
+            <a href="index/1" class="start-quiz-link">
+                <button class="start-quiz" type="submit">Начать</button>
+            </a>
+
+        </main>
+        </form>
+    </div>
+</body>
+</html>
